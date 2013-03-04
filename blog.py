@@ -16,7 +16,6 @@ SECRET_KEY = '0510'
 USERNAME = 'admin'
 PASSWORD = 'default'
 
-# create our little application :)
 app = Flask(__name__)
 app.config.from_object(__name__)
 
@@ -36,7 +35,6 @@ def teardown_request(exception):
 
 def connect_db():
     return sqlite3.connect(app.config['DATABASE'])
-
 
 assets = Environment(app)
 

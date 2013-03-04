@@ -4,20 +4,23 @@ from flask import Flask, request, session, g, redirect, url_for, \
 from delorean import Delorean
 
 from blog import app
+from werkzeug.routing import Rule
 
-@app.route('/')
+import rules
+
+@app.endpoint('index')
 def show_entries():
     cur = g.db.execute('select title, text, ts from entries order by id desc')
     entries = [dict(title=row[0], text=row[1], ts=row[2]) for row in cur.fetchall()]
     return render_template('show_entries.html', entries=entries)
 
-@app.route('/read/<title>')
+@app.endpoint('entry.read')
 def read_entry(title):
     cur = g.db.execute('select title, text, ts from entries where title = \'%s\' order by id desc' % title)
     entries = [dict(title=row[0], text=row[1], ts=row[2]) for row in cur.fetchall()]
     return render_template('show_entries.html', entries=entries)
 
-@app.route('/add', methods=['POST'])
+@app.endpoint('entry.add')
 def add_entry():
     if not session.get('logged_in'):
         abort(401)
@@ -27,9 +30,9 @@ def add_entry():
                  [request.form['title'], request.form['text'], d.date])
     g.db.commit()
     flash('New entry was successfully posted')
-    return redirect(url_for('show_entries'))
+    return redirect(url_for('index'))
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.endpoint('user.login')
 def login():
     error = None
     if request.method == 'POST':
@@ -40,11 +43,11 @@ def login():
         else:
             session['logged_in'] = True
             flash('You were logged in')
-            return redirect(url_for('show_entries'))
+            return redirect(url_for('index'))
     return render_template('login.html', error=error)
 
-@app.route('/logout')
+@app.endpoint('user.logout')
 def logout():
     session.pop('logged_in', None)
     flash('You were logged out')
-    return redirect(url_for('show_entries'))
+    return redirect(url_for('index'))

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Corey Burmeister</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Web Developer currently living in
+            Portland, OR. Helping music enthusiasts around the world build the
+            largest and most comprehensive music database and marketplace.">
+        {% assets "css_all" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}">
+        {% endassets %}
+        <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+                _gaq.push(['_setAccount', 'UA-32343386-2']);
+                _gaq.push(['_trackPageview']);
+
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <header itemscope itemtype="http://schema.org/Person">
+                <h1 itemprop="name">Corey Burmeister</h1>
+                <p itemprop="description">
+                    I am a Web Developer currently living in Portland, OR. When I am not cooking, traveling, or
+                    hunting for records, I'm helping music enthusiasts around the world build the largest and most comprehensive music
+                    database and marketplace.
+                </p>
+            </header>
+            <div class=metanav>
+                {% if not session.logged_in %}
+                <a href="{{ url_for('login') }}">log in</a>
+                {% else %}
+                <a href="{{ url_for('logout') }}">log out</a>
+                {% endif %}
+            </div>
+            {% for message in get_flashed_messages() %}
+                <div class=flash>{{ message }}</div>
+            {% endfor %}
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

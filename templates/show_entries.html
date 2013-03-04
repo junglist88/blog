@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    {% if session.logged_in %}
+        <form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
+            <dl>
+                <dt>Title:</dt>
+                <dd><input type=text size=30 name=title></dd>
+                <dt>Text:</dt>
+                <dd><textarea name=text rows=5 cols=40></textarea></dt>
+                <dd><input type=submit value=Share></dd>
+            </dl>
+        </form>
+    {% endif %}
+    <h2>Thoughts</h2>
+    <table style="width: 100%;">
+    {% for entry in entries %}
+        <tr>
+            <td>
+                <a href="{{ url_for('read_entry', title=entry.title)|lower|replace('%20', '_') }}">
+                    {{ entry.title }}
+                </a>
+            </td>
+            <td style="border-left: 1px solid #ccc; text-align: right; color: #ccc;">
+                {{ entry.ts }}
+            </td>
+        </tr>
+    {% else %}
+        <em>Unbelievable.  No entries here so far</em>
+    {% endfor %}
+    </table>
+{% endblock %}

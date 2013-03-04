@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    font-size: 17px;
+    color: #3e4349;
+    border-top: 5px solid #3e4349;
+}
+
+.container { 
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+}
+
+p {
+    line-height: 1.4;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Garamond', 'Georgia', serif;
+    font-weight: normal;
+    margin: 15px 0 5px 0;
+}
+
+h1 {
+    font-size: 42px;
+}
+
+h2 { 
+    font-size: 30px;
+    background: #fafafa;
+    margin: 20px -30px;
+    padding: 10px 30px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h3 small {
+    font-size: 16px;
+    color: #999;
+}
+
+h4 {
+    font-size: 19px;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+blockquote {
+    padding: 0 0 0 15px;
+    margin: 0 0 20px 0;
+    border-left: 5px solid #eee;
+}
+
+blockquote small {
+    color: #999;
+}
+
+footer {
+    padding: 2em 0;
+    color: #999;
+}
+
+a {
+    color: #B85A3D;
+}
+
+a:hover {
+    color: #D4A87D;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+}
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+h2 {
+    margin: 20px -10px;
+}
+
+}

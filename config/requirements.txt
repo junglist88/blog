@@ -1,0 +1,13 @@
+Delorean==0.1.6
+Flask==0.9
+Flask-Assets==0.8
+Jinja2==2.6
+Werkzeug==0.8.3
+cssmin==0.1.4
+discogs-client==1.1.1
+python-dateutil==2.1
+pytz==2012j
+requests==1.1.0
+six==1.2.0
+webassets==0.8
+wsgiref==0.1.2

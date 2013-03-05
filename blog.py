@@ -9,6 +9,8 @@ from flask import Flask, request, session, g, redirect, url_for, \
 
 from flask.ext.assets import Environment, Bundle
 
+from flask.ext.sqlalchemy import SQLAlchemy
+
 # configuration
 DATABASE = '/tmp/blog.db'
 DEBUG = True
@@ -18,23 +20,20 @@ PASSWORD = 'default'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/blog_dev'
+db = SQLAlchemy(app)
 
-def init_db():
-    with closing(connect_db()) as db:
-        with app.open_resource('schema.sql') as f:
-            db.cursor().executescript(f.read())
-        db.commit()
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True)
+    email = db.Column(db.String(120), unique=True)
 
-@app.before_request
-def before_request():
-    g.db = connect_db()
+    def __init__(self, username, email):
+        self.username = username
+        self.email = email
 
-@app.teardown_request
-def teardown_request(exception):
-    g.db.close()
-
-def connect_db():
-    return sqlite3.connect(app.config['DATABASE'])
+    def __repr__(self):
+        return '<User %r>' % self.username
 
 assets = Environment(app)
 

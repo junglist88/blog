@@ -1,7 +1,9 @@
 Delorean==0.1.6
 Flask==0.9
 Flask-Assets==0.8
+Flask-SQLAlchemy==0.16
 Jinja2==2.6
+MySQL-python==1.2.4
 Werkzeug==0.8.3
 cssmin==0.1.4
 discogs-client==1.1.1

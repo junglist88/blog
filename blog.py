@@ -1,26 +1,14 @@
 from __future__ import with_statement
 from contextlib import closing
 
-import sqlite3
-from delorean import Delorean
-
 from flask import Flask, request, session, g, redirect, url_for, \
              abort, render_template, flash
 
 from flask.ext.assets import Environment, Bundle
-
 from flask.ext.sqlalchemy import SQLAlchemy
 
-# configuration
-DATABASE = '/tmp/blog.db'
-DEBUG = True
-SECRET_KEY = '0510'
-USERNAME = 'admin'
-PASSWORD = 'default'
-
 app = Flask(__name__)
-app.config.from_object(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root@localhost/blog_dev'
+app.config.from_object('locals')
 db = SQLAlchemy(app)
 
 class User(db.Model):
@@ -34,6 +22,23 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.username
+
+class Entry(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(120))
+    created_ts = db.Column(db.DateTime)
+    content = db.Column(db.Text())
+
+    def __init__(self, title, content):
+        from delorean import Delorean
+        EST = "US/Eastern"
+        d = Delorean(timezone=EST)
+        self.title = title
+        self.created_ts = d.date
+        self.content = content
+
+    def __repr__(self):
+        return '<Entry %r>' % self.title
 
 assets = Environment(app)
 

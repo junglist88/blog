@@ -1,13 +1,13 @@
 {% extends "layout.html" %}
 
 {% block body %}
-    {% if session.logged_in %}
+    {% if True %}
         <form action="{{ url_for('entry.add') }}" method="post" class="add-entry">
             <dl>
                 <dt>Title:</dt>
                 <dd><input type=text size=30 name=title></dd>
                 <dt>Text:</dt>
-                <dd><textarea name=text rows=5 cols=40></textarea></dt>
+                <dd><textarea name=content rows=5 cols=40></textarea></dt>
                 <dd><input type=submit value=Share></dd>
             </dl>
         </form>
@@ -17,8 +17,7 @@
     {% for entry in entries %}
         <tr>
             <td>
-                <a href="{{ url_for('entry.read', 
-                        title=entry.title)|lower|replace('%20', '_') }}">
+                <a href="{{ url_for('entry.read', id=entry.id) }}">
                     {{ entry.title }}
                 </a>
             </td>

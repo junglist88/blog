@@ -7,7 +7,12 @@ from werkzeug.routing import Rule
 import rules
 
 @app.endpoint('index')
-def show_entries():
+def index():
+    entries = Entry.query.limit(4)
+    return render_template('index.html', entries=entries)
+
+@app.endpoint('entry.list')
+def list_entries():
     entries = Entry.query.all()
     return render_template('show_entries.html', entries=entries)
 

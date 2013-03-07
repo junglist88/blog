@@ -24,12 +24,15 @@ def read_entry(id):
 @app.endpoint('entry.add')
 def add_entry():
     #if not session.get('logged_in'):
-        #abort(401)
-    entry = Entry(request.form['title'], request.form['content'])
-    db.session.add(entry)
-    db.session.commit()
-    flash('New entry was successfully posted')
-    return redirect(url_for('index'))
+    #    abort(401)
+    if request.method == 'POST':
+        entry = Entry(request.form['title'], request.form['content'])
+        db.session.add(entry)
+        db.session.commit()
+        flash('New entry was successfully posted')
+        return redirect(url_for('index'))
+    else:
+        return render_template('add_entry.html')
 
 @app.endpoint('user.login')
 def login():

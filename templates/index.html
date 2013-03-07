@@ -1,111 +1,93 @@
+{% from "_entries.html" import list %}
 {% extends "layout.html" %}
 
 {% block body %}
     <h2>Thoughts</h2>
-    <table style="width: 100%;">
-    {% for entry in entries %}
-        <tr>
-            <td>
-                <a href="{{ url_for('entry.read', id=entry.id) }}">
-                    {{ entry.title }}
-                </a>
-            </td>
-            <td style="border-left: 1px solid #ccc; text-align: right; color: #ccc;">
-                {{ entry.ts }}
-            </td>
-        </tr>
-    {% else %}
-        <em>Unbelievable.  No entries here so far</em>
-    {% endfor %}
-    </table>
-        <h2>Experience</h2>
-        <ul>
-            <li itemscope itemtype="http://schema.org/Organization">
-                <h3>
-                    <a itemprop="url" href="http://www.discogs.com/">
-                        <span itemprop="name">Discogs</span></a>
-                    <small> - January 2013 - Present</small>
-                </h3>
-                <p itemprop="description">
-                    Writing python and javascript while using various open source 
-                    technologies to serve millions of users each day. We work for the
-                    love of music, maintaining and improving the site with over 10 million
-                    items in our international marketplace backed by a cross-referenced
-                    user-built database.
+        {{ list(entries) }}
+    <h2>Experience</h2>
+    <ul>
+        <li itemscope itemtype="http://schema.org/Organization">
+            <h3>
+                <a itemprop="url" href="http://www.discogs.com/">
+                    <span itemprop="name">Discogs</span></a>
+                <small> - January 2013 - Present</small>
+            </h3>
+            <p itemprop="description">
+                Writing python and javascript while using various open source
+                technologies to serve millions of users each day. We work for the
+                love of music, maintaining and improving the site with over 10 million
+                items in our international marketplace backed by a cross-referenced
+                user-built database.
+            </p>
+        </li>
+        <li itemscope itemtype="http://schema.org/Organization">
+            <h3>
+                <a itemprop="url" href="http://www.blacklineconsulting.com/">
+                    <span itemprop="name">Black Line Consulting</span></a>
+                <small> - April 2011 - January 2013</small>
+            </h3>
+            <p itemprop="description">
+                Developed and maintained a variety of products from internal tools
+                to web applications using SQL Server and ASP.net. Managed a small
+                team of developers while offering software consulting services to
+                small and medium sized businesses.
+            </p>
+        </li>
+        <li itemscope itemtype="http://schema.org/Organization">
+            <h3>
+                <a itemprop="url" href="http://www.innovaapps.net/">
+                    <span itemprop="name">Innova Apps</span></a>
+                <small> - October 2009 - April 2011</small>
+            </h3>
+            <p itemprop="description">
+                Helped build creative, simple, and cost effective websites and
+                applications for a small startup. While primarily focused on front
+                end development, I also formed a solid understanding of back end
+                web technologies.
+            </p>
+        </li>
+    </ul>
+    <h2>Education</h2>
+    <ul>
+        <li itemscope itemtype="http://schema.org/EducationalOrganization">
+            <h3>
+                <a itemprop="url" href="http://www.niu.edu/index.shtml">
+                    <span itemprop="name">Northern Illinois University</span></a>
+                <small> - Bachelors in Computer Science</small>
+            </h3>
+            <p itemprop="description">
+                Studied database management, web development, software
+                engineering, data structures and computer architecture.
+            </p>
+        </li>
+    </ul>
+    <h2>Testimonials</h2>
+    <ul>
+        <li>
+            <blockquote>
+                <p>
+                    "Corey has great creativity with a keen understanding of
+                    technology, which provides a great mix for web application
+                    development."
                 </p>
-            </li>
-            <li itemscope itemtype="http://schema.org/Organization">
-                <h3>
-                    <a itemprop="url" href="http://www.blacklineconsulting.com/">
-                        <span itemprop="name">Black Line Consulting</span></a>
-                    <small> - April 2011 - January 2013</small>
-                </h3>
-                <p itemprop="description">
-                    Developed and maintained a variety of products from internal tools
-                    to web applications using SQL Server and ASP.net. Managed a small
-                    team of developers while offering software consulting services to
-                    small and medium sized businesses.
+                <small>
+                    <a href="https://twitter.com/BJSebastian" target="_blank">Bryan Sebastian</a>
+                    <cite title="Source Title">- Owner, Innova Apps Inc.</cite>
+                </small>
+            </blockquote>
+        </li>
+        <li>
+            <blockquote>
+                <p>
+                    "Corey is a motivated, conscientious, thorough and
+                    technically competent engineer. He has attacked his projects
+                    with efficiency, accuracy, and creativity."
                 </p>
-            </li>
-            <li itemscope itemtype="http://schema.org/Organization">
-                <h3>
-                    <a itemprop="url" href="http://www.innovaapps.net/">
-                        <span itemprop="name">Innova Apps</span></a>
-                    <small> - October 2009 - April 2011</small>
-                </h3>
-                <p itemprop="description">
-                    Helped build creative, simple, and cost effective websites and 
-                    applications for a small startup. While primarily focused on front
-                    end development, I also formed a solid understanding of back end
-                    web technologies.
-                </p>
-            </li>
-        </ul>
-        <h2>Education</h2>
-        <ul>
-            <li itemscope itemtype="http://schema.org/EducationalOrganization">
-                <h3>
-                    <a itemprop="url" href="http://www.niu.edu/index.shtml">
-                        <span itemprop="name">Northern Illinois University</span></a>
-                    <small> - Bachelors in Computer Science</small>
-                </h3>
-                <p itemprop="description">
-                    Studied database management, web development, software
-                    engineering, data structures and computer architecture.
-                </p>
-            </li>
-        </ul>
-        <h2>Testimonials</h2>
-        <ul>
-            <li>
-                <blockquote>
-                    <p>
-                        "Corey has great creativity with a keen understanding of
-                        technology, which provides a great mix for web application
-                        development."
-                    </p>
-                    <small>
-                        <a href="https://twitter.com/BJSebastian" target="_blank">Bryan Sebastian</a>
-                        <cite title="Source Title">- Owner, Innova Apps Inc.</cite>
-                    </small>
-                </blockquote>
-            </li>
-            <li>
-                <blockquote>
-                    <p>
-                        "Corey is a motivated, conscientious, thorough and
-                        technically competent engineer. He has attacked his projects
-                        with efficiency, accuracy, and creativity."
-                    </p>
-                    <small>
-                        <a href="http://www.linkedin.com/pub/jody-jankovsky/2/a83/a47" target="_blank">Jody Jankovsky</a>
-                        <cite title="Source Title">- Owner, Black Line Consulting Inc.</cite>
-                    </small>
-                </blockquote>
-            </li>
-        </ul>
-        <footer>
-            <small>&copy; Corey Burmeister 2009-2013</small>
-        </footer>
-    </div>
+                <small>
+                    <a href="http://www.linkedin.com/pub/jody-jankovsky/2/a83/a47" target="_blank">Jody Jankovsky</a>
+                    <cite title="Source Title">- Owner, Black Line Consulting Inc.</cite>
+                </small>
+            </blockquote>
+        </li>
+    </ul>
 {% endblock %}

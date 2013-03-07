@@ -1,0 +1,11 @@
+{% macro list(entries) %}
+    {% for entry in entries %}
+        <h3>
+            <a href="{{ url_for('entry.read', id=entry.id) }}">
+                {{ entry.title }}</a>
+            <small>- {{ entry.created_ts.strftime('%m-%d-%Y') }}</small>
+        </h3>
+    {% else %}
+        <p>Unbelievable.  No entries here so far</p>
+    {% endfor %}
+{% endmacro %}

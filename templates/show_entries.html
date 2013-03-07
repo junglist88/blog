@@ -1,6 +1,8 @@
 {% from "_entries.html" import list %}
 {% extends "layout.html" %}
 
+{% block title %}All Entries{% endblock %}
+
 {% block body %}
     <h2>Thoughts</h2>
     {{ list(entries) }}

@@ -6,10 +6,12 @@ from flask import Flask, request, session, g, redirect, url_for, \
 
 from flask.ext.assets import Environment, Bundle
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.misaka import Misaka
 
 app = Flask(__name__)
 app.config.from_object('locals')
 db = SQLAlchemy(app)
+Misaka(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -41,7 +43,6 @@ class Entry(db.Model):
         return '<Entry %r>' % self.title
 
 assets = Environment(app)
-
 css = Bundle('style.css', filters='cssmin', output="gen/all.css")
 assets.register('css_all', css)
 

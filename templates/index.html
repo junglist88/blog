@@ -4,6 +4,9 @@
 {% block body %}
     <h2>Thoughts</h2>
         {{ list(entries) }}
+        <p>
+            <a href="{{ url_for('entry.list') }}">View All...</a>
+        </p>
     <h2>Experience</h2>
     <ul>
         <li itemscope itemtype="http://schema.org/Organization">

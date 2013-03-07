@@ -1,7 +1,10 @@
+{% from "_header.html" import header %}
 {% from "_entries.html" import list %}
 {% extends "layout.html" %}
 
 {% block title %}Corey Burmeister - Resume{% endblock %}
+
+{% block header %}{{ header() }}{% endblock %}
 
 {% block body %}
     <h2>Thoughts</h2>

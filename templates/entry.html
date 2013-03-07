@@ -1,9 +1,14 @@
+{% from "_header.html" import header %}
+{% from "_entries.html" import list %}
 {% extends "layout.html" %}
 
 {% block title %}{{ entry.title }}{% endblock %}
+
+{% block header %}{{ header() }}{% endblock %}
 
 {% block body %}
     <h2>{{ entry.title }}</h2>
     <p>{{ entry.content|markdown }}</p>
     <p>{{ entry.created_ts }}</p>
+    {{ list(similiar_entries) }}
 {% endblock %}

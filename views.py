@@ -21,6 +21,19 @@ def read_entry(id):
     entry = Entry.query.filter_by(id=id).first()
     return render_template('entry.html', entry=entry)
 
+@app.endpoint('entry.edit')
+def edit_entry(id):
+    if request.method == 'POST': 
+        entry = Entry.query.filter_by(id=id).first()
+        entry.title = request.form['title']
+        entry.content = request.form['content']
+        db.session.commit()
+        flash('Entry was successfully edited')
+        return redirect(url_for('entry.read', id=id))
+    else:
+        entry = Entry.query.filter_by(id=id).first()
+        return render_template('edit_entry.html', entry=entry)
+
 @app.endpoint('entry.add')
 def add_entry():
     #if not session.get('logged_in'):

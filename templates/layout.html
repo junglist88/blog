@@ -30,16 +30,8 @@
     </head>
     <body>
         <div class="container">
-            <header itemscope itemtype="http://schema.org/Person">
-                <h1 itemprop="name">
-                    <a href="{{ url_for('index') }}">Corey Burmeister</a>
-                </h1>
-                <p itemprop="description">
-                I am a Web Developer currently living in Portland, OR. When I
-                am not cooking, traveling, or hunting for records, I'm
-                helping music enthusiasts around the world build the largest
-                and most comprehensive music database and marketplace.
-                </p>
+            <header>
+                {% block header %}{% endblock %}
             </header>
             <nav>
                 <iframe src="http://ghbtns.com/github-btn.html?user=cburmeister&amp;type=follow&amp;count=true&amp;size=large" frameborder="0" width="250" height="30"></iframe>
@@ -48,9 +40,9 @@
             {% for message in get_flashed_messages() %}
                 <div class=flash>{{ message }}</div>
             {% endfor %}
-            {% block body %}
-            {% endblock %}
+            {% block body %}{% endblock %}
             <footer>
+                {% block footer %}{% endblock %}
                 <small>&copy; Corey Burmeister 2009-2013</small>
             </footer>
         </div>

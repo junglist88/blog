@@ -16,6 +16,14 @@ header {
     padding: 0 0 1em 0;
 }
 
+article {
+    padding: 0 0 1em 0;
+}
+
+footer {
+    padding: 0 0 1em 0;
+}
+
 p {
     line-height: 1.25em;
 }
@@ -65,10 +73,6 @@ blockquote {
 
 blockquote small {
     color: #999;
-}
-
-footer {
-    padding: 2em 0;
 }
 
 a {

@@ -9,14 +9,11 @@ body {
 .container { 
     max-width: 640px;
     margin: 0 auto;
-    padding: 1em;
+    padding: 0 1em;
 }
 
 header {
     padding: 0 0 1em 0;
-}
-
-nav {
 }
 
 p {
@@ -82,6 +79,26 @@ a:hover {
     color: #D4A87D;
 }
 
+input[type="text"], input[type="password"] {
+    width: 600px;
+    padding: .75em;
+}
+
+textarea {
+    width: 600px;
+    height: 500px;
+    padding: .75em;
+}
+
+code, pre {
+    background: #fafafa;
+    margin: 20px -30px;
+    padding: 10px 30px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    word-wrap: break-word;
+}
+
 /* Large desktop */
 @media (min-width: 1200px) {
 }
@@ -100,12 +117,9 @@ a:hover {
 .container { 
     padding: 1em;
 }
-h2 {
-    margin: .75em -.5em;
-}
 
-img {
-    width: 100%;
+h2, code, pre {
+    margin: .75em -.5em;
 }
 
 }

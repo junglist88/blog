@@ -9,17 +9,20 @@
     <header>
         <h1>{{ entry.title }}</h1>
         <h3>
-            <a href="{{ url_for('index') }}">Corey Burmeister</a> 
-            wrote this on {{ entry.ts }}
+            <a href="{{ url_for('index') }}">Corey</a> 
+            wrote this on {{ entry.ts.strftime('%Y-%m-%d')  }}
         </h3>
     </header>
 {% endblock %}
 
 {% block body %}
-    <article>{{ entry.text }}</article>
+    <article>{{ entry.text|safe }}</article>
 {% endblock %}
 
 {% block footer %}
-    <header><h3>About the author...</h3>{{ header() }}</header>
+    <header>
+        <h3>About the author...</h3>
+        {{ header() }}
+    </header>
     <nav>{{ nav() }}</nav>
 {% endblock %}

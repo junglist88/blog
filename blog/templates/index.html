@@ -19,6 +19,7 @@
                     {{ entry.title }}
                 </a>
             </h3>
+            <a href="{{ url_for('edit', id=entry.id) }}">Edit</a>
         </li>
     {% else %}
     <p>Unbelievable. No entries here so far</p>

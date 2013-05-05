@@ -1,10 +1,13 @@
 {% from "_header.html" import header %}
 {% from "_nav.html" import nav %}
+{% from "_admin.html" import admin %}
+
 {% extends "_layout.html" %}
 
 {% block title %}Corey Burmeister - Resume{% endblock %}
 
 {% block header %}
+    {{ admin(entry) }}
     <header>{{ header() }}</header>
     <nav>{{ nav() }}</nav>
 {% endblock %}
@@ -19,7 +22,6 @@
                     {{ entry.title }}
                 </a>
             </h3>
-            <a href="{{ url_for('edit', id=entry.id) }}">Edit</a>
         </li>
     {% else %}
     <p>Unbelievable. No entries here so far</p>

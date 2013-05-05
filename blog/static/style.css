@@ -4,7 +4,6 @@ body {
     font-size: 17px;
     color: #3e4349;
     border-top: 5px solid #3e4349;
-    padding: 20px 0;
 }
 
 .container { 
@@ -13,8 +12,9 @@ body {
     padding: 20px;
 }
 
-article {
-    padding: 20px 0;
+img {
+    margin: 0 -20px;
+    width: 100%;
 }
 
 header {
@@ -23,18 +23,16 @@ header {
 
 nav {
     text-align: center;
-    padding: 20px 0;
 }
 
 p {
-    line-height: 1.4em;
-    word-wrap: break-word;
+    line-height: 1.4;
 }
 
 h1, h2, h3, h4 {
     font-family: 'Garamond', 'Georgia', serif;
     font-weight: normal;
-    margin: 15px 0 5px 0;
+    margin: 15px 0 10px 0;
 }
 
 h1 {
@@ -63,6 +61,11 @@ h4 {
     font-size: 19px;
 }
 
+ul {
+    padding: 0;
+    list-style: none;
+}
+
 blockquote {
     padding: 0 0 0 15px;
     margin: 0 0 20px 0;
@@ -86,43 +89,30 @@ a:hover {
     color: #D4A87D;
 }
 
-input[type="text"], input[type="password"] {
-    width: 500px;
-    padding: 10px;
-}
-
-textarea {
-    width: 500px;
-    height: 500px;
-    padding: 10px;
-}
-
-code, pre {
-    background: #fafafa;
-    margin: 20px -30px;
-    padding: 10px 30px;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    word-wrap: break-word;
-}
-
 /* Large desktop */
 @media (min-width: 1200px) {
 }
-
+ 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
 }
-
+ 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
 }
-
+ 
 /* Landscape phones and down */
 @media (max-width: 480px) {
 
-h2, code, pre {
-    margin: 20px -10px;
-}
+    .container { 
+        padding: 0 20px;
+    }
+    h2 {
+        margin: 20px -10px;
+    }
+
+    img {
+        width: 100%;
+    }
 
 }

@@ -9,7 +9,7 @@ body {
 .container { 
     max-width: 640px;
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 1em;
 }
 
 header {
@@ -58,11 +58,6 @@ h3 small {
 
 h4 {
     font-size: 19px;
-}
-
-ul {
-    padding: 0;
-    list-style: none;
 }
 
 blockquote {
@@ -119,7 +114,7 @@ code, pre {
 @media (max-width: 480px) {
 
 .container { 
-    padding: 1em;
+    padding: 0 1em;
 }
 
 h2, code, pre {

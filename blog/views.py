@@ -42,6 +42,15 @@ def edit(id):
 
     return render_template('edit.html', entry=entry)
 
+@app.endpoint('remove')
+def remove(id):
+    entry = Entry.objects(id=id).first()
+    if not entry:
+        abort(404)
+    entry.delete()
+    flash('Removed entry')
+    return redirect(url_for('index'))
+
 @app.endpoint('login')
 def login():
     error = None

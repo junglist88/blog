@@ -15,7 +15,7 @@
         {% for entry in entries %}
         <li>
             <h3>
-                <a>
+                <a href="{{ url_for('read', url=entry.url) }}">
                     {{ entry.title }}
                 </a>
             </h3>

@@ -1,8 +1,6 @@
 {% macro admin(entry) %}
-    <p>
         <a href="{{ url_for('write') }}">Write</a>
         {% if entry %}
             <a href="{{ url_for('edit', id=entry.id) }}">Edit</a>
         {% endif %}
-    </p>
 {% endmacro %}

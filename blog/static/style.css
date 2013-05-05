@@ -1,28 +1,26 @@
 body {
     margin: 0;
     font-family: 'Georgia', serif;
-    font-size: 1.5em;
+    font-size: 1.25em;
     color: #3e4349;
     border-top: 5px solid #3e4349;
 }
 
 .container { 
-    max-width: 720px;
+    max-width: 640px;
     margin: 0 auto;
     padding: 1em;
 }
 
 header {
-    padding: 2em 0;
-    text-align: center;
+    padding: 0 0 1em 0;
 }
 
 nav {
-    text-align: center;
 }
 
 p {
-    line-height: 1.5em;
+    line-height: 1.25em;
 }
 
 h1, h2, h3, h4 {
@@ -73,7 +71,6 @@ blockquote small {
 }
 
 footer {
-    text-align: center;
     padding: 2em 0;
 }
 
@@ -104,7 +101,7 @@ a:hover {
     padding: 1em;
 }
 h2 {
-    margin: 1em -.5em;
+    margin: .75em -.5em;
 }
 
 img {

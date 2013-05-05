@@ -1,0 +1,6 @@
+{% macro admin(entry) %}
+    <a href="{{ url_for('write') }}">Write</a>
+    {% if entry %}
+        <a href="{{ url_for('edit', id=entry.id) }}">Edit</a>
+    {% endif %}
+{% endmacro %}

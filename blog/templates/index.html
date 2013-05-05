@@ -1,0 +1,27 @@
+{% from "_header.html" import header %}
+{% from "_nav.html" import nav %}
+{% extends "_layout.html" %}
+
+{% block title %}Corey Burmeister - Resume{% endblock %}
+
+{% block header %}
+    <header>{{ header() }}</header>
+    <nav>{{ nav() }}</nav>
+{% endblock %}
+
+{% block body %}
+    <h2>Articles</h2>
+    <ul>
+        {% for entry in entries %}
+        <li>
+            <h3>
+                <a>
+                    {{ entry.title }}
+                </a>
+            </h3>
+        </li>
+    {% else %}
+    <p>Unbelievable. No entries here so far</p>
+    {% endfor %}
+    </ul>
+{% endblock %}

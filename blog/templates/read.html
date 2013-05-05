@@ -1,0 +1,25 @@
+{% from "_header.html" import header %}
+{% from "_nav.html" import nav %}
+
+{% extends "_layout.html" %}
+
+{% block title %}{{ entry.title }}{% endblock %}
+
+{% block header %}
+    <header>
+        <h1>{{ entry.title }}</h1>
+        <h3>
+            <a href="{{ url_for('index') }}">Corey Burmeister</a> 
+            wrote this on {{ entry.ts }}
+        </h3>
+    </header>
+{% endblock %}
+
+{% block body %}
+    <article>{{ entry.text }}</article>
+{% endblock %}
+
+{% block footer %}
+    <header><h3>About the author...</h3>{{ header() }}</header>
+    <nav>{{ nav() }}</nav>
+{% endblock %}

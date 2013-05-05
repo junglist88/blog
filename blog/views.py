@@ -1,4 +1,4 @@
-from flask import request, redirect, url_for, render_template, abort
+from flask import request, redirect, url_for, render_template, abort, flash, session
 from blog import app, rules
 from models.entry import Entry
 from markdown import markdown
@@ -41,3 +41,25 @@ def edit(id):
         return redirect(url_for('read', url=entry.url))
 
     return render_template('edit.html', entry=entry)
+
+@app.endpoint('login')
+def login():
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != app.config['USERNAME']:
+            error = 'Invalid username.'
+        elif request.form['password'] != app.config['PASSWORD']:
+            error = 'Invalid password.'
+        else:
+            session['logged_in'] = True
+            flash('You were logged in')
+            return redirect(url_for('index'))
+    if error:
+        flash(error)
+    return render_template('login.html')
+
+@app.endpoint('logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('You were logged out')
+    return redirect(url_for('index'))

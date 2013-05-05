@@ -1,13 +1,11 @@
 {% from "_header.html" import header %}
 {% from "_nav.html" import nav %}
-{% from "_admin.html" import admin %}
 
 {% extends "_layout.html" %}
 
 {% block title %}{{ entry.title }}{% endblock %}
 
 {% block header %}
-    {{ admin(entry) }}
     <header>
         <h1>{{ entry.title }}</h1>
         <h3>

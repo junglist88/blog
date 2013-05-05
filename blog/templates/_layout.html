@@ -1,3 +1,5 @@
+{% from "_admin.html" import admin %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +11,10 @@
 <body>
     <div class="container">
         {% if session.logged_in %}
-            <a href="{{ url_for('login') }}">Logout</a>
+            {{ admin(entry) }}
         {% endif %}
         {% for message in get_flashed_messages() %}
-            <div class=flash>{{ message }}</div>
+            <p>{{ message }}</p>
         {% endfor %}
         {% block header %}{% endblock %}
         {% block body %}{% endblock %}

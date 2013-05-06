@@ -1,27 +1,42 @@
 {% from "_header.html" import header %}
 {% from "_nav.html" import nav %}
+{% import "_macro.html" as macro %}
 
 {% extends "_layout.html" %}
 
-{% block title %}{{ entry.title }}{% endblock %}
+{% block title %}{{ entry.title }} - Corey Burmeister{% endblock %}
 
 {% block header %}
     <header>
         <h1>{{ entry.title }}</h1>
-        <h3>
-            <a href="{{ url_for('index') }}">Corey</a> 
-            wrote this on {{ entry.ts.strftime('%B %e, %Y')  }}
-        </h3>
+        <p>
+            written on {{ entry.ts.strftime('%B %e, %Y')  }}
+        </p>
     </header>
 {% endblock %}
 
 {% block body %}
-    <article>{{ entry.text|safe }}</article>
+    <article>
+        {{ entry.text|safe }}
+    </article>
 {% endblock %}
 
 {% block footer %}
     <footer>
-        <h3>About the author...</h3>
+        {{ macro.tweet(entry) }}
+        <h3>You might enjoy these other articles from the 
+            <a href="{{ url_for('index') }}">Archives</a></h3>
+        <ul>
+            {% for entry in entries %}
+                <li>
+                    <a href="{{ url_for('read', url=entry.url) }}">
+                        {{ entry.title }}
+                    </a>
+                </li>
+            {% else %}
+                <p>Unbelievable. No entries here so far</p>
+            {% endfor %}
+        </ul>
         {{ header() }}
         <nav>{{ nav() }}</nav>
     </footer>

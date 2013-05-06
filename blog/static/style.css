@@ -24,6 +24,14 @@ footer {
     padding: 0 0 1em 0;
 }
 
+nav {
+    padding: 1em 0;
+}
+
+li {
+    padding: 0 0 .5em 0;
+}
+
 p {
     line-height: 1.25em;
 }
@@ -114,7 +122,11 @@ code, pre {
 @media (max-width: 480px) {
 
 .container { 
-    padding: 0 1em;
+    padding: 0 .5em;
+}
+
+h1 {
+    margin: .5em 0 .5em 0;
 }
 
 h2, code, pre {

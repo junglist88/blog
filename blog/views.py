@@ -2,11 +2,12 @@ from flask import request, redirect, url_for, render_template, abort, flash, ses
 from blog import app, rules
 from models.entry import Entry
 from markdown import markdown
+import random
 
 
 @app.endpoint('index')
 def index():
-    entries = Entry.objects() 
+    entries = Entry.objects()
     return render_template('index.html', entries=entries)
 
 @app.endpoint('read')
@@ -15,7 +16,9 @@ def read(url):
     if not entry:
         abort(404)
     entry.text = markdown(entry.text, ['codehilite'])
-    return render_template('read.html', entry=entry)
+    entries = [x for x in Entry.objects()]
+    entries = random.sample(entries, 2)
+    return render_template('read.html', entry=entry, entries=entries)
 
 @app.endpoint('write')
 def write():
@@ -25,7 +28,6 @@ def write():
                 text=request.form['text'])
         entry.save()
         return redirect(url_for('index'))
-
     return render_template('write.html')
 
 @app.endpoint('edit')
@@ -39,7 +41,6 @@ def edit(id):
         entry.text = request.form['text']
         entry.save()
         return redirect(url_for('read', url=entry.url))
-
     return render_template('edit.html', entry=entry)
 
 @app.endpoint('remove')

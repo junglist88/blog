@@ -17,7 +17,8 @@ def read(url):
         abort(404)
     entry.text = markdown(entry.text, ['codehilite'])
     entries = [x for x in Entry.objects()]
-    entries = random.sample(entries, 2)
+    if len(entries) > 2:
+        entries = random.sample(entries, 2)
     return render_template('read.html', entry=entry, entries=entries)
 
 @app.endpoint('write')

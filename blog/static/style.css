@@ -129,8 +129,12 @@ h1 {
     margin: .5em 0 .5em 0;
 }
 
+header {
+    padding: 0;
+}
+
 h2, code, pre {
-    margin: .75em 0;
+    margin: .75em -.5em;
 }
 
 }

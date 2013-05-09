@@ -13,16 +13,14 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Archives</h2>
-    <ul>
-        {% for entry in entries %}
-            <li>
-                <a href="{{ url_for('read', url=entry.url) }}">
-                    {{ entry.title }}
-                </a>
-            </li>
-        {% else %}
-            <p>Unbelievable. No entries here so far</p>
-        {% endfor %}
-    </ul>
+    <h2>Articles</h2>
+    {% for entry in entries %}
+        <h3>
+            <a href="{{ url_for('read', url=entry.url) }}">
+                {{ entry.title }}</a>
+            <small>{{ entry.ts.strftime('%B %e, %Y')  }}</small>
+        </h3>
+    {% else %}
+        <p>Unbelievable. No entries here so far</p>
+    {% endfor %}
 {% endblock %}

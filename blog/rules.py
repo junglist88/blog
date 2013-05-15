@@ -2,9 +2,4 @@ from blog import app
 from werkzeug.routing import Rule
 
 app.url_map.add(Rule('/', endpoint='index'))
-app.url_map.add(Rule('/write', endpoint='write'))
-app.url_map.add(Rule('/<url>', endpoint='read'))
-app.url_map.add(Rule('/edit/<id>', endpoint='edit'))
-app.url_map.add(Rule('/remove/<id>', endpoint='remove'))
-app.url_map.add(Rule('/login', endpoint='login'))
-app.url_map.add(Rule('/logout', endpoint='logout'))
+app.url_map.add(Rule('/<path:path>', endpoint='entry'))

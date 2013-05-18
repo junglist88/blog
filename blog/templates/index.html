@@ -11,16 +11,11 @@
 {% endblock %}
 
 {% block body %}
-    <h2>Entries</h2>
     {% for entry in entries %}
         <h3>
             <a href="{{ url_for('entry', path=entry.path) }}">
                 {{ entry.title }}</a>
             <small>{{ entry.ts.strftime('%B %e, %Y')  }}</small>
         </h3>
-    {% else %}
-        <p>
-            Unbelievable. No entries here so far
-        </p>
     {% endfor %}
 {% endblock %}

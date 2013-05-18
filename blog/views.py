@@ -10,7 +10,10 @@ def index():
 @app.endpoint('entry')
 def entry(path):
     entry = pages.get_or_404(path)
-    return render_template('read.html', entry=entry, entries=pages)
+    entries = [x for x in pages]
+    if len(entries) > 2:
+        entries = random.sample(entries, 2)
+    return render_template('read.html', entry=entry, entries=entries)
 
 @app.errorhandler(404)
 def page_not_found(error):

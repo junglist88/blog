@@ -21,7 +21,6 @@ footer {
 }
 
 nav {
-    padding: 1em 0;
 }
 
 pre {
@@ -57,11 +56,8 @@ h1 {
 
 h2 { 
     font-size: 1.5em;
-    background: #fafafa;
-    margin: 1em -.75em;
-    padding: .5em .75em;
-    border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    padding-bottom: .5em;
 }
 
 h3 {
@@ -129,12 +125,12 @@ h1 {
     margin: .5em 0 .5em 0;
 }
 
-header {
+nav {
     padding: 0;
 }
 
-h2, code, pre {
-    margin: .75em -.5em;
+header {
+    padding: 0;
 }
 
 }

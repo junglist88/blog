@@ -11,6 +11,7 @@
 {% endblock %}
 
 {% block body %}
+    <h2>Entries</h2>
     {% for entry in entries %}
         <h3>
             <a href="{{ url_for('entry', path=entry.path) }}">
@@ -18,4 +19,5 @@
             <small>{{ entry.ts.strftime('%B %e, %Y')  }}</small>
         </h3>
     {% endfor %}
+    <h2>Projects</h2>
 {% endblock %}

@@ -8,8 +8,10 @@
         <h1>
             {{ entry.title }}
         </h1>
-        <p>
-            written on {{ entry.ts.strftime('%B %e, %Y')  }}
+        <p> 
+            <span>by <a href="{{ url_for('index') }}">Corey Burmeister</a></span>
+            <br />
+            <span>written on {{ entry.ts.strftime('%B %e, %Y')  }}</span>
         </p>
     </header>
 {% endblock %}
@@ -18,23 +20,11 @@
     <article>
         {{ entry.html|safe }}
     </article>
+    {{ tweet(entry) }}
 {% endblock %}
 
 {% block footer %}
     <footer>
-        {{ tweet(entry) }}
-        <h3>
-            You might enjoy these other 
-            <a href="{{ url_for('index') }}">entries</a>.
-        </h3>
-        <ul>
-            {% for entry in entries %}
-                <li>
-                    <a href="{{ url_for('entry', path=entry.path) }}">
-                        {{ entry.title }}</a>
-                </li>
-            {% endfor %}
-        </ul>
         {{ header() }}
         <nav>{{ nav() }}</nav>
     </footer>

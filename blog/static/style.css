@@ -20,9 +20,6 @@ footer {
     padding: 0 0 1em 0;
 }
 
-nav {
-}
-
 pre {
     padding: 1em;
     background-color: #073642;
@@ -91,17 +88,6 @@ a:hover {
     color: #D4A87D;
 }
 
-input[type="text"], input[type="password"] {
-    width: 600px;
-    padding: .75em;
-}
-
-textarea {
-    width: 600px;
-    height: 500px;
-    padding: .75em;
-}
-
 /* Large desktop */
 @media (min-width: 1200px) {
 }
@@ -118,7 +104,7 @@ textarea {
 @media (max-width: 480px) {
 
 .container { 
-    padding: 0 1em;
+    padding: 0em 1em 1em 1em;
 }
 
 h1 {

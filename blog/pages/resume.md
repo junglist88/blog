@@ -1,6 +1,12 @@
 title: Resume
 ts: 2012-03-04
 
+## Proficiency
+
+- Unix, VIM, Git
+- Python, Ruby, Shell, Javascript, C, C++
+- MySQL, MongoDB, Redis, Memcached
+
 ## Experience
 
 ### [Discogs](http://www.discogs.com/) <small>- January 2013 - Present</small>

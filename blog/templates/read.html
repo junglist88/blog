@@ -5,9 +5,7 @@
 
 {% block header %}
     <header>
-        <h1>
-            {{ entry.title }}
-        </h1>
+        <h1>{{ entry.title }}</h1>
         <p> 
             <span>by <a href="{{ url_for('index') }}">Corey Burmeister</a></span>
             <br />
@@ -17,9 +15,7 @@
 {% endblock %}
 
 {% block body %}
-    <article>
-        {{ entry.html|safe }}
-    </article>
+    <article>{{ entry.html|safe }}</article>
     {{ tweet(entry) }}
 {% endblock %}
 

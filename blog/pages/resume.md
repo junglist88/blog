@@ -1,19 +1,19 @@
 title: Resume
 ts: 2012-03-04
 
-## Proficiency
+## Skills
 
-- Unix, VIM, Git
-- Python, Ruby, Shell, Javascript, C, C++
+- Unix, Vim, Git
+- Python, Javascript, C
 - MySQL, MongoDB, Redis, Memcached
 
 ## Experience
 
 ### [Discogs](http://www.discogs.com/) <small>- January 2013 - Present</small>
 
-Utilizing various open source technologies to serve millions of users each day.
-I help maintain and improve the site with over 3 million items in our
-international marketplace backed by a cross-referenced user-built database.
+Member of a small, agile team using open source technologies to serve
+millions of users every day. Discogs is an international marketplace
+with over 13 million items supported by a cross-referenced user-contributed database.
 
 ### [Blackline Consulting](http://www.blacklineconsulting.com/) <small>- April 2011 - January 2013</small>
 
@@ -23,8 +23,8 @@ consulting services to small and medium sized businesses.
 
 ### [Innova Apps](http://www.innovaapps.net/) <small>- October 2009 - April 2011</small>
 
-Helped build creative, simple, and cost effective websites
-and applications for a small startup.
+Helped design and build creative, simple, and cost effective websites
+and applications for small businesses.
 
 ## Education
 

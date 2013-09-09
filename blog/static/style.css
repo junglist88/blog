@@ -132,6 +132,10 @@ h1 {
     margin: .5em 0 .5em 0;
 }
 
+h2 {
+    padding-bottom: .25em;
+}
+
 nav {
     padding: 0;
 }

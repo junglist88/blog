@@ -12,29 +12,18 @@ body {
     padding: 1em;
 }
 
-article {
-    padding: 0 0 1em 0;
-}
-
-footer {
+article, footer {
     padding: 0 0 1em 0;
 }
 
 pre {
     padding: 1em;
-    background-color: #073642;
-}
-
-code {
-    padding: 2px 4px;
-    color: #d33682;
-    white-space: nowrap;
-    background-color: #f7f7f9;
-    border: 1px solid #e1e1e8;
-}
-
-li {
-    padding: 0 0 .5em 0;
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    color: #B85A3D;
+    overflow-x: scroll;
 }
 
 p {
@@ -107,11 +96,7 @@ h1 {
     margin: .5em 0 .5em 0;
 }
 
-nav {
-    padding: 0;
-}
-
-header {
+nav, header {
     padding: 0;
 }
 
@@ -136,11 +121,7 @@ h2 {
     padding-bottom: .25em;
 }
 
-nav {
-    padding: 0;
-}
-
-header {
+nav, header {
     padding: 0;
 }
 

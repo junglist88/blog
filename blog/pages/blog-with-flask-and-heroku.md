@@ -110,7 +110,9 @@ Add this to templates/entry.html:
 
     {% extends "layout.html" %}
 
-    {% block title %}{{ entry.title }}{% endblock %}
+    {% block title %}
+        {{ entry.title }}
+    {% endblock %}
 
     {% block content %}
         <header>
@@ -146,6 +148,10 @@ Test the app:
     * Running on http://127.0.0.1:5000/
     * Restarting with reloader
 
+Lets save our progress:
+
+    $ git commit -am 'added entry'
+
 ## Setting up Heroku
 
 First install the [Heroku Toolbelt](https://toolbelt.heroku.com/) and login:
@@ -168,11 +174,11 @@ Test the web server:
 
     $ foreman start
 
-## Deploying
-
 Lets save our progress:
 
-    $ git commit -am 'added procfile'
+    $ git commit -am 'added heroku config'
+
+## Deploying
 
 Create a new git remote so you are able to deploy your app using git push:
 

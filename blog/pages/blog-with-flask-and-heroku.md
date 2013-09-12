@@ -20,8 +20,9 @@ three simple steps:
 ## Setup
 
 > I *highly* recommend that you use virtual environments when working on
-> python applications, I use [pythonbrew]() which allows me to create
-> individual python installations on my machine.
+> python applications, I use
+> [pythonbrew](https://github.com/utahta/pythonbrew) which allows
+> me to create individual python installations on my machine.
 
 Go ahead and create a new directory, git repo, and virtualenv.
 
@@ -29,7 +30,8 @@ Go ahead and create a new directory, git repo, and virtualenv.
     $ git init
     $ pythonbrew venv create blog-dev
 
-Lets install our two dependencies. The [flask_flatpages]() package
+Lets install our two dependencies. The
+[flask_flatpages](http://pythonhosted.org/Flask-FlatPages/) package
 is used to render our static markdown files:
 
     $ pip install Flask flask_flatpages
@@ -129,7 +131,8 @@ Create a new markdown file under the pages directory:
 
     $ touch pages/first-entry.md
 
-Flask-Flatpages uses [YAML]() for the entry metadata. Add this to the new file:
+Flask-Flatpages uses [YAML](http://yaml.org/) for the entry
+metadata. Add this to the new file:
 
     title: First Blog Entry
     ts: 2013-09-11
@@ -149,7 +152,7 @@ First install the [Heroku Toolbelt](https://toolbelt.heroku.com/) and login:
 
     $ heroku login
 
-Install [Gunicorn](), the web server:
+Install [Gunicorn](http://gunicorn.org/), the web server:
 
     $ pip install gunicorn
 

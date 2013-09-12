@@ -17,7 +17,7 @@
                 <h3>
                     <a href="{{ url_for('entry', path=entry.path) }}">
                         {{ entry.title }}</a>
-                    <small>{{ entry.ts.strftime('%B %e, %Y')  }}</small>
+                    <small>{{ entry.published.strftime('%B %e, %Y')  }}</small>
                 </h3>
             </li>
         {% endfor %}

@@ -1,5 +1,5 @@
 title: Resume
-ts: 2012-03-04
+published: 2012-03-04
 
 ## Skills
 

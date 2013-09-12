@@ -7,7 +7,7 @@
     <header>
         <h1>{{ entry.title }}</h1>
         <p> 
-            <span>written on {{ entry.ts.strftime('%B %e, %Y')  }}</span>
+            <span>written on {{ entry.published.strftime('%B %e, %Y')  }}</span>
             <br />
             <span>by <a href="{{ url_for('index') }}">Corey Burmeister</a></span>
         </p>

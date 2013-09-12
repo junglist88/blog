@@ -1,7 +1,7 @@
 title: Blog with Flask & Heroku
-ts: 2012-09-11
+ts: 2013-09-11
 
-Building a markdown formatted blog hosted with
+Building a markdown formatted blog with
 [Flask](http://flask.pocoo.org/) and 
 [Heroku](https://www.heroku.com/) is fucking simple.
 Most blogging tools on the web today

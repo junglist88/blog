@@ -5,8 +5,8 @@ import random
 
 @app.endpoint('index')
 def index():
-    entries = sorted(pages, reverse=False, key=lambda p: p.meta['published'])
-    return render_template('index.html', entries=pages)
+    entries = sorted(pages, reverse=True, key=lambda p: p.meta['published'])
+    return render_template('index.html', entries=entries)
 
 @app.endpoint('entry')
 def entry(path):

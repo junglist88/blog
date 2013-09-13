@@ -29,6 +29,7 @@ Go ahead and create a new directory, git repo, and virtualenv.
     $ mkdir blog && cd blog
     $ git init
     $ pythonbrew venv create blog-dev
+    $ pythonbrew venv use blog-dev
 
 Lets install our two dependencies. The
 [flask_flatpages](http://pythonhosted.org/Flask-FlatPages/) package
@@ -125,7 +126,8 @@ Add this to templates/entry.html:
 
 Lets save our progress:
 
-    $ git commit -am 'created flask application'
+    $ git add .
+    $ git commit -m 'created flask application'
 
 ## Writing your first entry
 
@@ -133,8 +135,7 @@ Create a new markdown file under the pages directory:
 
     $ touch pages/first-entry.md
 
-Flask-Flatpages uses [YAML](http://yaml.org/) for the entry
-metadata. Add this to the new file:
+Add this to the new file:
 
     title: First Blog Entry
     ts: 2013-09-11
@@ -145,12 +146,11 @@ metadata. Add this to the new file:
 Test the app:
 
     $ python blog.py
-    * Running on http://127.0.0.1:5000/
-    * Restarting with reloader
 
 Lets save our progress:
 
-    $ git commit -am 'added entry'
+    $ git add .
+    $ git commit -m 'added entry'
 
 ## Setting up Heroku
 
@@ -176,7 +176,8 @@ Test the web server:
 
 Lets save our progress:
 
-    $ git commit -am 'added heroku config'
+    $ git add .
+    $ git commit -m 'added heroku config'
 
 ## Deploying
 

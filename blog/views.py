@@ -5,7 +5,8 @@ import random
 
 @app.endpoint('index')
 def index():
-    entries = sorted(pages, reverse=True, key=lambda p: p.meta['published'])
+    entries = [x for x in pages if 'published' in x.meta]
+    entries = sorted(entries, reverse=True, key=lambda p: p.meta['published'])
     return render_template('index.html', entries=entries)
 
 @app.endpoint('entry')

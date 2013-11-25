@@ -1,4 +1,4 @@
-{% from "_macro.html" import header, nav, tweet %}
+{% from "_macro.html" import header, tweet %}
 {% extends "_layout.html" %}
 
 {% block title %}{{ entry.title }} - Corey Burmeister{% endblock %}
@@ -14,7 +14,9 @@
 {% endblock %}
 
 {% block body %}
-    <article>{{ entry.html|safe }}</article>
+    <article>
+        {{ entry.html|safe }}
+    </article>
 {% endblock %}
 
 {% block footer %}

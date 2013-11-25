@@ -1,18 +1,15 @@
-{% from "_macro.html" import header, nav %}
+{% from "_macro.html" import header %}
 {% extends "_layout.html" %}
 
-{% block title %}Page not found - Corey Burmeister{% endblock %}
+{% block title %}
+    Page not found - Corey Burmeister
+{% endblock %}
 
 {% block header %}
-    <h1>Page Not Found</h1>
+    <h1>404 - Page Not Found</h1>
 {% endblock %}
 
 {% block body %}
-    <p>
-        Sorry I dunno where you're trying to go.
-    </p>
-    <p>
-        <a href="{{ url_for('index') }}">Click here</a>
-        to go back home
-    </p>
+    <p>Sorry, I dunno where you're trying to go.</p>
+    <p><a href="{{ url_for('index') }}">Click here</a> to go back home.</p>
 {% endblock %}

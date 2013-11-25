@@ -1,7 +1,9 @@
-{% from "_macro.html" import header, nav %}
+{% from "_macro.html" import header %}
 {% extends "_layout.html" %}
 
-{% block title %}Corey Burmeister{% endblock %}
+{% block title %}
+    Corey Burmeister
+{% endblock %}
 
 {% block header %}
     <header>
@@ -12,11 +14,9 @@
 {% block body %}
     {% for entry in entries %}
         <h3>
-            <a href="{{ url_for('entry', path=entry.path) }}">
-                {{ entry.title }}
-            </a>
+            <a href="{{ url_for('entry', path=entry.path) }}">{{ entry.title }}</a>
             <br>
-        <small>{{ entry.published.strftime('%B %e, %Y')  }}</small>
+            <small>{{ entry.published.strftime('%B %e, %Y') }}</small>
         </h3>
     {% endfor %}
 {% endblock %}

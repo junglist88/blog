@@ -8,12 +8,7 @@ body {
 
 .container { 
     max-width: 640px;
-    margin: 0 auto;
     padding: 1em;
-}
-
-article, footer {
-    padding: 0 0 1em 0;
 }
 
 pre {
@@ -31,19 +26,16 @@ p {
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Garamond', 'Georgia', serif;
     font-weight: normal;
-    margin: 1em 0 .5em 0;
 }
 
 h1 {
     font-size: 2em;
+    margin-top: 0;
 }
 
 h2 { 
     font-size: 1.5em;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: .5em;
 }
 
 h3 {
@@ -88,42 +80,11 @@ a:hover {
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
 
-.container { 
-    padding: 0em 1em 0em 1em;
-}
-
-h1 {
-    margin: .5em 0 .5em 0;
-}
-
-nav, header {
-    padding: 0;
-}
-
 }
  
 /* Landscape phones and down */
 @media (max-width: 480px) {
 
-.container { 
-    padding: 0em 1em 1em 1em;
-}
-
-ul {
-    padding-left: 1em;
-}
-
-h1 {
-    margin: .5em 0 .5em 0;
-}
-
-h2 {
-    padding-bottom: .25em;
-}
-
-nav, header {
-    padding: 0;
-}
 
 }
 

@@ -6,20 +6,17 @@
 {% block header %}
     <header>
         {{ header() }}
-        <nav>{{ nav() }}</nav>
     </header>
 {% endblock %}
 
 {% block body %}
-    <ul>
-        {% for entry in entries %}
-            <li>
-                <h3>
-                    <a href="{{ url_for('entry', path=entry.path) }}">
-                        {{ entry.title }}</a>
-                    <small>{{ entry.published.strftime('%B %e, %Y')  }}</small>
-                </h3>
-            </li>
-        {% endfor %}
-    </ul>
+    {% for entry in entries %}
+        <h3>
+            <a href="{{ url_for('entry', path=entry.path) }}">
+                {{ entry.title }}
+            </a>
+            <br>
+        <small>{{ entry.published.strftime('%B %e, %Y')  }}</small>
+        </h3>
+    {% endfor %}
 {% endblock %}
